@@ -1,0 +1,1 @@
+{"dependencies":{"bcryptjs":"^2.4.3","express":"^4.19.2","jsonwebtoken":"^9.0.2","pg":"^8.12.0"},"description":"UC Traders — PUBG Mobile UC store (Node.js + Express + PostgreSQL)","engines":{"node":">=18"},"main":"server.js","name":"uc-traders","scripts":{"init-db":"node scripts/init-db.js","start":"node server.js"},"version":"1.0.0"}

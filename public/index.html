@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UC Traders — Buy PUBG Mobile UC</title>
+<meta name="description" content="UC Traders — Buy PUBG Mobile UC at the best prices in Pakistan. Pay by Easypaisa and get UC delivered on your Character ID.">
+<link rel="icon" type="image/jpeg" href="/assets/uc-traders-logo.jpg">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="#" id="brandHome">
+      <img src="/assets/uc-traders-logo.jpg" alt="UC Traders logo" class="brand-logo">
+      <span class="brand-text"><span class="brand-name">UC Traders</span><span class="brand-tag">PUBG Mobile UC Store</span></span>
+    </a>
+    <nav class="top-actions">
+      <button id="navPlans" class="nav-btn" type="button">💰 Plans</button>
+      <button id="navPackages" class="nav-btn" type="button">📦 My Packages</button>
+      <button id="navTrack" class="nav-btn" type="button">🔍 Track Order</button>
+      <button id="navAdmin" class="nav-btn" type="button">🛡️ Admin</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div id="homeView">
+  <div id="homeMain">
+    <section class="hero">
+      <div class="wrap hero-inner">
+        <p class="kicker">UC Traders — Pakistan's Trusted UC Store</p>
+        <h1>PUBG Mobile — <span class="gold">Best UC Sellers</span></h1>
+        <p class="hero-sub">Buy PUBG Mobile UC at the best prices in Pakistan. Pay by Easypaisa, submit your Transaction ID, and get your UC delivered on your Character ID.</p>
+        <div class="hero-ctas">
+          <button class="btn btn-primary" id="heroBuyBtn" type="button">Buy UC Now</button>
+          <button class="btn btn-ghost" id="heroPackagesBtn" type="button">📦 My Packages</button>
+        </div>
+        <div class="trust-row">
+          <span>✅ Trusted Store</span>
+          <span>⚡ Fast Delivery</span>
+          <span>🕐 24/7 Support</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap reviews-section">
+      <h2>Customer Reviews</h2>
+      <div class="slider-viewport">
+        <div id="reviewSlider" class="slider-track">
+          <div class="review-slide"><strong>Customer Review Screenshot</strong><span>Yahan pehla review screenshot lagega</span></div>
+          <div class="review-slide"><strong>Customer Review Screenshot</strong><span>Yahan doosra review screenshot lagega</span></div>
+          <div class="review-slide"><strong>Customer Review Screenshot</strong><span>Yahan teesra review screenshot lagega</span></div>
+          <div class="review-slide"><strong>Customer Review Screenshot</strong><span>Yahan chauthe review screenshot lagega</span></div>
+        </div>
+      </div>
+      <div class="slider-controls">
+        <button id="revPrev" class="slider-arrow" type="button" aria-label="Previous reviews">‹</button>
+        <div id="revDots" class="slider-dots"></div>
+        <button id="revNext" class="slider-arrow" type="button" aria-label="Next reviews">›</button>
+      </div>
+      <p class="muted small">Real customer review screenshots will appear here.</p>
+    </section>
+
+    <section class="wrap" id="plansSection">
+      <h2>UC Plans</h2>
+      <p class="muted">Original prices are computed from the discount — they are not official PUBG / Midasbuy prices.</p>
+      <div id="packGrid" class="pack-grid"></div>
+    </section>
+
+    <section class="wrap" id="checkout">
+      <h2>Checkout</h2>
+      <div class="checkout-grid">
+        <div class="checkout-main">
+          <div id="idForm" class="step-card">
+            <h3>Step 1 — Your PUBG Account</h3>
+            <p class="muted small">Enter your PUBG details so we can verify your account and deliver your UC. We never ask for your PUBG password or login.</p>
+            <label>Character ID *
+              <input id="charId" type="text" inputmode="numeric" maxlength="12" placeholder="e.g. 5123456789" autocomplete="off">
+            </label>
+            <p class="field-error" id="charIdErr" hidden>Character ID must be 5–12 digits.</p>
+            <label>In-Game Name *
+              <input id="ign" type="text" maxlength="24" placeholder="Your PUBG in-game name" autocomplete="off">
+            </label>
+            <p class="field-error" id="ignErr" hidden>In-game name must be at least 2 characters.</p>
+            <label>WhatsApp / Contact Number *
+              <input id="contact" type="tel" maxlength="16" placeholder="03XX XXXXXXX" autocomplete="off">
+            </label>
+            <p class="field-error" id="contactErr" hidden>Contact number must be 10–15 digits.</p>
+            <button class="btn btn-primary" id="toStep2" type="button">Continue →</button>
+          </div>
+
+          <div id="step2" class="step-card" hidden>
+            <h3>Step 2 — Confirm Your ID</h3>
+            <div class="player-card">
+              <div class="player-avatar" id="playerAvatar">?</div>
+              <div class="player-details">
+                <p><strong>In-Game Name:</strong> <span id="pcIgn"></span></p>
+                <p><strong>Character ID:</strong> <span id="pcCharId"></span></p>
+                <p><strong>Contact:</strong> <span id="pcContact"></span></p>
+                <p><strong>Pack:</strong> <span id="pcPack"></span></p>
+                <p><strong>Price:</strong> <span id="pcPrice"></span></p>
+              </div>
+            </div>
+            <p class="muted small">Please check carefully — your UC will be delivered to this Character ID.</p>
+            <div class="btn-row">
+              <button class="btn btn-primary" id="confirmId" type="button">✅ Haan, Ye Meri ID Hai</button>
+              <button class="btn btn-ghost" id="editId" type="button">✏️ Edit</button>
+            </div>
+          </div>
+
+          <div id="step3" class="step-card" hidden>
+            <h3>Step 3 — Payment &amp; Transaction ID</h3>
+            <p class="muted small">Pay with Easypaisa, then enter your Transaction ID below and submit.</p>
+            <button class="pay-method" id="easypaisaBtn" type="button">
+              <span class="pay-icon">E</span>
+              <span class="pay-name">Easypaisa</span>
+              <span class="pay-hint">Click to see payment details</span>
+            </button>
+            <div id="payReveal" class="pay-reveal" hidden>
+              <p><strong>Easypaisa Number:</strong> <span id="payNumber">03097214736</span>
+                <button class="btn btn-small" id="copyNumber" type="button">Copy</button></p>
+              <p><strong>Account Title:</strong> <span id="payTitle">Mubeen Bibi</span></p>
+              <p class="muted small">Send the exact pack amount to this Easypaisa number, then enter the Transaction ID you receive.</p>
+            </div>
+            <p class="field-error" id="payErr" hidden>Please open the Easypaisa payment details first.</p>
+            <label>Transaction ID *
+              <input id="txnId" type="text" maxlength="30" placeholder="Enter your Easypaisa Transaction ID" autocomplete="off">
+            </label>
+            <p class="field-error" id="txnErr" hidden>Transaction ID must be at least 5 characters.</p>
+            <button class="btn btn-primary" id="submitOrder" type="button">Submit Order</button>
+            <p class="field-error" id="orderErr" hidden></p>
+            <button class="btn btn-ghost" id="backToStep2" type="button">← Back</button>
+          </div>
+
+          <div id="orderSuccess" class="step-card" hidden>
+            <h3>✅ Order Placed!</h3>
+            <p>Order Number: <strong id="successOrderNo"></strong></p>
+            <p>Status: <span class="badge badge-pending">Pending</span></p>
+            <p class="muted small">Your order is Pending. The admin will confirm your payment and apply your UC — then your status will change to Successful. You can track it from My Packages or Track Order.</p>
+            <div class="btn-row">
+              <button class="btn btn-primary" id="successMyPackages" type="button">My Package Details Dekhein</button>
+              <button class="btn btn-ghost" id="newOrderBtn" type="button">New Order</button>
+            </div>
+          </div>
+        </div>
+
+        <aside class="order-summary" id="orderSummary" aria-label="Order summary"></aside>
+      </div>
+    </section>
+
+    <section class="wrap how-section">
+      <h2>How It Works</h2>
+      <ol class="how-steps">
+        <li><strong>1. Choose a pack</strong><span>Pick the UC pack you want.</span></li>
+        <li><strong>2. Enter your PUBG ID</strong><span>Character ID + in-game name so we can verify your account.</span></li>
+        <li><strong>3. Pay by Easypaisa</strong><span>Send the amount and submit your Transaction ID.</span></li>
+        <li><strong>4. Get your UC</strong><span>Admin confirms your payment and applies your UC. Status becomes Successful.</span></li>
+      </ol>
+    </section>
+
+    <section class="wrap pay-section">
+      <h2>Payment Methods</h2>
+      <div class="pay-card">
+        <span class="pay-icon">E</span>
+        <div>
+          <strong>Easypaisa</strong>
+          <p>Number: <strong>03097214736</strong> &nbsp;·&nbsp; Account Title: <strong>Mubeen Bibi</strong></p>
+          <p class="muted small">Send the exact pack amount to this Easypaisa number and submit your Transaction ID at checkout. No JazzCash and no cash on delivery.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap faq-section">
+      <h2>Frequently Asked Questions</h2>
+      <details><summary>How will I receive my UC?</summary><p>After you pay and submit your Transaction ID, the admin verifies your payment and tops up your UC via official Midasbuy on your Character ID. Your order status then changes to Successful.</p></details>
+      <details><summary>Do you need my PUBG password or login?</summary><p>No — never. We only need your Character ID and in-game name. Official top-up works on the Character ID alone. Never share your PUBG password with anyone.</p></details>
+      <details><summary>How long does delivery take?</summary><p>Delivery starts after the admin confirms your payment. Your order stays Pending until the admin confirms it — you can watch the status change to Successful in My Packages or Track Order.</p></details>
+      <details><summary>Which payment method can I use?</summary><p>Easypaisa only — number 03097214736, account title Mubeen Bibi. There is no JazzCash and no cash on delivery.</p></details>
+      <details><summary>How do I track my order?</summary><p>Use Track Order or My Packages from the top menu and enter your PUBG Character ID. You will see your pack details and whether your order is Pending or Successful.</p></details>
+    </section>
+  </div>
+
+  <section class="wrap" id="trackSection" hidden>
+    <h2>🔍 Track Order</h2>
+    <p class="muted">Enter your PUBG Character ID to see your orders and their status.</p>
+    <div class="track-form">
+      <input id="trackCharId" type="text" inputmode="numeric" maxlength="12" placeholder="Your Character ID" autocomplete="off">
+      <button class="btn btn-primary" id="trackBtn" type="button">Track</button>
+    </div>
+    <p class="field-error" id="trackErr" hidden></p>
+    <div id="trackResults"></div>
+    <button class="btn btn-ghost" id="trackBackBtn" type="button">← Home Page</button>
+  </section>
+
+  <section class="wrap" id="myPackagesSection" hidden>
+    <h2>📦 My Packages — Package Details</h2>
+    <p class="muted">Enter your PUBG Character ID to see all your packages with full details and status.</p>
+    <div class="track-form">
+      <input id="pkgCharId" type="text" inputmode="numeric" maxlength="12" placeholder="Your Character ID" autocomplete="off">
+      <button class="btn btn-primary" id="pkgBtn" type="button">Show My Packages</button>
+    </div>
+    <p class="field-error" id="pkgErr" hidden></p>
+    <p id="pkgCount" class="muted"></p>
+    <div id="pkgResults"></div>
+    <div class="flow-note">
+      <strong>How it works:</strong> Your new order always stays <span class="badge badge-pending">Pending</span> until the admin confirms your payment and applies your UC. Then it becomes <span class="badge badge-success">Successful</span>.
+    </div>
+    <button class="btn btn-ghost" id="pkgBackBtn" type="button">← Home Page</button>
+  </section>
+
+  <section class="wrap" id="adminSection" hidden>
+    <div id="adminLoginView" class="admin-login">
+      <img src="/assets/uc-traders-logo.jpg" alt="UC Traders logo" class="admin-logo">
+      <h2>Admin Login</h2>
+      <p class="muted small">Only the admin can log in here. There is no sign-up option.</p>
+      <label>Username or Email *
+        <input id="adminIdentifier" type="text" placeholder="Username or Gmail" autocomplete="username">
+      </label>
+      <label>Password *
+        <input id="adminPassword" type="password" placeholder="Password" autocomplete="current-password">
+      </label>
+      <p class="field-error" id="adminLoginErr" hidden></p>
+      <button class="btn btn-primary" id="adminLoginBtn" type="button">Login</button>
+      <button class="btn btn-ghost" id="adminLoginBackBtn" type="button">← Home Page</button>
+    </div>
+
+    <div id="adminDashView" hidden>
+      <div class="admin-head">
+        <h2>Admin Dashboard <span class="badge badge-success">Admin Logged In</span></h2>
+        <button class="btn btn-ghost" id="adminLogoutBtn" type="button">Logout</button>
+      </div>
+      <div class="stat-grid" id="adminStats"></div>
+      <div class="admin-tools">
+        <input id="adminSearch" type="text" placeholder="Search by order no, Character ID, name, contact, TXN, pack…" autocomplete="off">
+        <div class="filter-chips">
+          <button class="chip chip-active" data-filter="All" type="button">All Orders</button>
+          <button class="chip" data-filter="Pending" type="button">Pending</button>
+          <button class="chip" data-filter="Successful" type="button">Successful</button>
+        </div>
+      </div>
+      <p class="field-error" id="adminErr" hidden></p>
+      <div id="adminOrders"></div>
+
+      <div class="dash-grid">
+        <div class="dash-card">
+          <h3>💰 Easypaisa Receiving</h3>
+          <p>Number: <strong>03097214736</strong></p>
+          <p>Account Title: <strong>Mubeen Bibi</strong></p>
+          <p class="muted small">Customers pay to this Easypaisa account only.</p>
+        </div>
+        <div class="dash-card">
+          <h3>📋 All Packs &amp; Prices</h3>
+          <div id="adminPackList"></div>
+        </div>
+        <div class="dash-card">
+          <h3>🔑 Password Change Karein</h3>
+          <label>Old Password *
+            <input id="oldPass" type="password" autocomplete="current-password">
+          </label>
+          <label>New Password * <span class="muted small">(at least 8 characters)</span>
+            <input id="newPass" type="password" autocomplete="new-password">
+          </label>
+          <label>Confirm New Password *
+            <input id="confirmPass" type="password" autocomplete="new-password">
+          </label>
+          <p class="field-error" id="pwErr" hidden></p>
+          <p class="field-ok" id="pwOk" hidden>Password changed successfully.</p>
+          <button class="btn btn-primary" id="changePwBtn" type="button">Change Password</button>
+        </div>
+      </div>
+      <button class="btn btn-ghost" id="adminBackBtn" type="button">← Home Page</button>
+    </div>
+  </section>
+</div>
+
+<div id="plansPage" hidden>
+  <div class="wrap plans-page">
+    <h2>UC Plans</h2>
+    <p class="muted">Original prices are computed from the discount — they are not official PUBG / Midasbuy prices.</p>
+    <div id="plansGrid" class="pack-grid"></div>
+    <div class="btn-row">
+      <button class="btn btn-ghost" id="plansBackBtn" type="button">← Home Page</button>
+      <button class="btn btn-ghost" id="plansMyPackagesBtn" type="button">📦 My Packages</button>
+    </div>
+  </div>
+</div>
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <img src="/assets/uc-traders-logo.jpg" alt="UC Traders logo" class="footer-logo">
+    <p><strong>UC Traders</strong> — Buy PUBG Mobile UC at the best prices in Pakistan.</p>
+    <p class="muted small">Payment: Easypaisa 03097214736 (Mubeen Bibi). No JazzCash, no cash on delivery.</p>
+    <p class="muted small">UC Traders is an independent store and is not affiliated with PUBG Mobile, Tencent, Krafton or Midasbuy. UC is delivered via official Midasbuy top-up on your Character ID. We never ask for your PUBG password or login.</p>
+  </div>
+</footer>
+
+<script src="/js/app.js"></script>
+</body>
+</html>
